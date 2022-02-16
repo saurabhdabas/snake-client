@@ -1,8 +1,6 @@
-const {connect} = require("./client")
-
-let connInput = connect();
-
-const setupInput = function () {
+let connection;
+const setupInput = function (conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -17,16 +15,16 @@ const handleUserInput = function (key) {
   }
   // Moving the snake on the board 
   if (key === 'w') {
-    connInput.write("Move: up")
+    connection.write("Move: up")
   }
   if (key === 's') {
-    connInput.write("Move: down")
+    connection.write("Move: down")
   }
   if (key === 'a') {
-    connInput.write("Move: left")
+    connection.write("Move: left")
   }
   if (key === 'd') {
-    connInput.write("Move: right")
+    connection.write("Move: right")
   }
 };
 
