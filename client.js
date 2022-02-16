@@ -10,9 +10,11 @@ const connect = function () {
   conn.setEncoding("utf8");
   conn.on("connect", () => {
     // code that does something when the connection is first established
-    console.log("Connection with the server esatablished");
+    conn.write("Name: SSD")
+    console.log("Connection with the server established");
+    
   });
   return conn;
 };
 
-module.exports = connect;
+module.exports = {connect};
