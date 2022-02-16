@@ -26,6 +26,10 @@ const handleUserInput = function (key) {
   if (key === 'd') {
     connection.write("Move: right")
   }
+  // snake saying stuff
+  if (key === 'z') {
+    connection.write("Say: Hiss!")
+  }
 };
 
 module.exports = setupInput;
